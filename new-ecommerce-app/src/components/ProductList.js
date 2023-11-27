@@ -15,7 +15,7 @@ const ProductList = ({
 	};
 
 	return (
-		<div className='product-list'>
+		<section className='product-list'>
 			{products?.map((product) => (
 				<div
 					className='product-wrap'
@@ -24,7 +24,7 @@ const ProductList = ({
 						<h3>{product.title}</h3>
 						<img
 							className='product-image'
-							alt='productimage'
+							alt={product.title}
 							src={product.image}
 						/>
 
@@ -35,7 +35,9 @@ const ProductList = ({
 							{product.description.length > 150 && (
 								<span
 									className='product-read-more'
-									onClick={toggleReadMore}>
+									onClick={toggleReadMore}
+									role='button'
+									aria-expanded={!isReadMore}>
 									{isReadMore ? "...Read More" : " ...Show Less"}
 								</span>
 							)}
@@ -49,24 +51,30 @@ const ProductList = ({
 										className='quantity'
 										key={product.id}>
 										Quantity:{" "}
-										<i
+										<button
+										className="value-change-btn"
 											onClick={() => decrement(product)}
-											className='fa-solid fa-square-minus'></i>{" "}
+											aria-label='Decrease Quantity'>
+											<i className='fa-solid fa-square-minus'></i>
+										</button>{" "}
 										{item.quantity}{" "}
-										<i
+										<button
+											className="value-change-btn"
 											onClick={() => increment(product)}
-											className='fa-solid fa-square-plus'></i>
+											aria-label='Increase Quantity'>
+											<i className='fa-solid fa-square-plus'></i>
+										</button>
 									</p>
 								);
 							} else return null;
 						})}
 
 						<div className='price'>${product.price} CAD</div>
-						<button onClick={() => addToCart(product)}>Add to Cart</button>
+						<button className="add-to-cart-btn" onClick={() => addToCart(product)}>Add to Cart</button>
 					</div>
 				</div>
 			))}
-		</div>
+		</section>
 	);
 };
 

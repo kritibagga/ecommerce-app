@@ -1,46 +1,44 @@
-import React from "react";
-const Footer = () => {
-	return (
-		<div className='footer'>
-			<div className='footer-group'>
-				<h3>Explore</h3>
-				<a href='https://www.google.com/'> Drinks</a>
-				<a href='https://www.google.com/'> Gift Cards</a>
-				<a href='https://www.google.com/'> Store Locator</a>
-				<a href='https://www.google.com/'> Refer a friend</a>
-			</div>
-			<div className='footer-group'>
-				<h3>Help</h3>
-				<a href='https://www.google.com/'> Contact Us</a>
-				<a href='https://www.google.com/'> FAQs</a>
-				<a href='https://www.google.com/'> Accessibility</a>
-			</div>
-			<div className='footer-group'>
-				<h3>Company</h3>
-				<a href='https://www.google.com/'> About</a>
-				<a href='https://www.google.com/'> Blog</a>
-				<a href='https://www.google.com/'> Pricing</a>
-				<a href='https://www.google.com/'> Free Trial</a>
-			</div>
-			<div className='footer-group'>
-				<h3>Contact Details</h3>
-				<a href='https://www.google.com/'> +1 222-343-0090</a>
-				<a href='https://www.google.com/'> Email: abc@gmail.com</a>
-				<a href='https://www.google.com/'> Address: 112 Eliis Building </a>
-				<a href='https://www.google.com/'> Free Trial</a>
-			</div>
+const footerLinks = [
+	{ text: "Drinks", url: "https://www.google.com/" },
+	{ text: "Gift Cards", url: "https://www.google.com/" },
+	{ text: "Store Locator", url: "https://www.google.com/" },
+	{ text: "Refer a friend", url: "https://www.google.com/" },
+];
 
-			<div className='social-icons'>
-				<p>On Social Media</p>
-				<div className='social-icon-group'>
-					<i className='fa-brands fa-instagram'></i>
-					<i className='fa-brands fa-facebook'></i>
-					<i className='fa-brands fa-twitter'></i>
-					<i className='fa-brands fa-linkedin'></i>
-				</div>
+const FooterLink = ({ text, url }) => (
+	<a
+		href={url}
+		rel='noopener noreferrer'>
+		{text}
+	</a>
+);
+
+const Footer = () => (
+	<div className='footer'>
+		{["Explore", "Help", "Company", "Contact Details"].map((title, index) => (
+			<div
+				className='footer-group'
+				key={index}>
+				<h3>{title}</h3>
+				{footerLinks.map((link, linkIndex) => (
+					<FooterLink
+						key={linkIndex}
+						{...link}
+					/>
+				))}
+			</div>
+		))}
+
+		<div className='social-icons'>
+			<p>On Social Media</p>
+			<div className='social-icon-group'>
+				<i className='fa-brands fa-instagram'></i>
+				<i className='fa-brands fa-facebook'></i>
+				<i className='fa-brands fa-twitter'></i>
+				<i className='fa-brands fa-linkedin'></i>
 			</div>
 		</div>
-	);
-};
+	</div>
+);
 
 export default Footer;

@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 
 const Cart = ({ cart, removeFromCart, clearCart, increment, decrement }) => {
 	return (
-		<div className='cart'>
+		<section className='cart'>
 			<h2 className='cart-header'>Shopping Cart</h2>
 			{cart.length > 0 ? (
 				<button
 					className='clear-button'
+					aria-label='Clear Cart'
 					onClick={clearCart}>
 					Clear Cart
 				</button>
@@ -18,24 +19,32 @@ const Cart = ({ cart, removeFromCart, clearCart, increment, decrement }) => {
 			)}
 
 			{cart.map((item) => (
-				<div className='cart-item' key={item.id}>
+				<div
+					className='cart-item'
+					key={item.id}>
 					<img
 						className='cart-item-image'
-						alt='cartitemimage'
+						alt={item.title}
 						src={item.image}
 					/>
 					<div>
 						<p className='cart-item-title'>{item.title}</p>
 
-						<p className='quantity'>
+						<p className='cart-quantity'>
 							Quantity:{" "}
-							<i
+							<button
+                            className="cart-quantity-value-changer"
 								onClick={() => decrement(item)}
-								className='fa-solid fa-square-minus'></i>{" "}
+								aria-label='Decrease Quantity'>
+								<i className='fa-solid fa-square-minus'></i>
+							</button>{" "}
 							{item.quantity}{" "}
-							<i
+							<button
+                            className="cart-quantity-value-changer"
 								onClick={() => increment(item)}
-								className='fa-solid fa-square-plus'></i>
+								aria-label='Increase Quantity'>
+								<i className='fa-solid fa-square-plus'></i>
+							</button>
 						</p>
 					</div>
 					<p className='total-price'>
@@ -61,7 +70,12 @@ const Cart = ({ cart, removeFromCart, clearCart, increment, decrement }) => {
 								.toFixed(2)}
 						</span>
 					</p>
-					<button className='cart-checkout-btn'> Proceed to Checkout</button>
+					<button
+						className='cart-checkout-btn'
+						aria-label='Proceed to Checkout'>
+						{" "}
+						Proceed to Checkout
+					</button>
 				</>
 			) : (
 				<div className='empty-cart-wrap'>
@@ -81,7 +95,7 @@ const Cart = ({ cart, removeFromCart, clearCart, increment, decrement }) => {
 					</Link>
 				</div>
 			)}
-		</div>
+		</section>
 	);
 };
 

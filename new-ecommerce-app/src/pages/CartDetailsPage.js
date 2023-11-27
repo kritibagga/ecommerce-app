@@ -9,7 +9,6 @@ import {
 import Cart from "../components/Cart.js";
 import { connect } from "react-redux";
 
-
 const CartDetailsPage = () => {
 	const dispatch = useDispatch();
 	const cartdata = useSelector((state) => state.cartReducer.cartItems);
@@ -17,7 +16,9 @@ const CartDetailsPage = () => {
 	return (
 		<div className='cart-details-page'>
 			<Cart
+				tabIndex='0'
 				cart={cartdata}
+				aria-label='Shopping Cart'
 				decrement={(product) => dispatch(decrement(product))}
 				increment={(product) => dispatch(increment(product))}
 				removeFromCart={(product) => dispatch(removeFromCart(product))}

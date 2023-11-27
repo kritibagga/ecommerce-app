@@ -52,11 +52,19 @@ const ProductListingPage = () => {
 	return (
 		<>
 			<div className='product-header-wrap '>
-				<h1 className='product-list-header'>KrytLabs Shopping</h1>
+				<h1
+					className='product-list-header'
+					aria-label='KrytLabs Shopping'>
+					KrytLabs Shopping
+				</h1>
 				<Link
 					to='/cart'
 					className='icon'>
-					<i className='fa-solid fa-shopping-cart'> </i>
+					<i
+						className='fa-solid fa-shopping-cart'
+						aria-label='Shopping Cart'>
+						{" "}
+					</i>
 					<div className='badge'>
 						<span className='number'>{products.length}</span>
 					</div>
@@ -82,7 +90,12 @@ const ProductListingPage = () => {
 					/>
 				</>
 			) : (
-				<p> Loading products...</p>
+				<p
+					role='status'
+					aria-live='polite'>
+					{" "}
+					Loading products...
+				</p>
 			)}
 		</>
 	);
