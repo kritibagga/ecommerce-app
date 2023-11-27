@@ -2,7 +2,7 @@
 	"name": "new-ecommerce-app",
 	"version": "0.1.0",
 	"private": false,
-  "homepage": "https://github.com/kritibagga/ecommerce-app",
+  "homepage": "https://kritibagga.github.io/ecommerce-app",
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.4.2",
 		"@fortawesome/free-brands-svg-icons": "^6.4.2",
