@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/actions/cartActions.js";
+import {
+	addToCart,
+	increment,
+	decrement,
+} from "../redux/actions/cartActions.js";
 import ProductList from "../components/ProductList";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -54,6 +58,9 @@ const ProductListingPage = () => {
 				<>
 					<ProductList
 						products={subset}
+						quantity={products}
+						increment={(product) => dispatch(increment(product))}
+						decrement={(product) => dispatch(decrement(product))}
 						addToCart={(product) => dispatch(addToCart(product))}
 					/>
 					<ReactPaginate
@@ -77,4 +84,6 @@ const mapStateToProps = (state) => ({
 	cartItems: state.cartReducer.cartItems,
 });
 
-export default connect(mapStateToProps, { addToCart })(ProductListingPage);
+export default connect(mapStateToProps, { addToCart, increment, decrement })(
+	ProductListingPage
+);

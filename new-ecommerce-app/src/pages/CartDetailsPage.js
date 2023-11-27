@@ -8,7 +8,7 @@ import {
 } from "../redux/actions/cartActions.js";
 import Cart from "../components/Cart.js";
 import { connect } from "react-redux";
-//import store from "../redux/store.js";
+
 
 const CartDetailsPage = () => {
 	const dispatch = useDispatch();

@@ -61,6 +61,7 @@ body {
 			width: 27vw;
 			padding: 0.4rem;
 			border-radius: 1rem;
+			background-color: aliceblue;
 		}
 		.search-icon {
 			margin-left: 0.5rem;
@@ -203,6 +204,9 @@ body {
 			margin-bottom: 1rem;
 			font-weight: bold;
 		}
+		.quantity {
+			margin-bottom: 1rem;
+		}
 		button {
 			background-color: #3c31ef;
 			color: #fff;
@@ -250,6 +254,8 @@ body {
 		align-items: center;
 		margin: 3rem;
 		display: grid;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+			rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 		grid-template-columns: repeat(4, 1fr);
 		@media (max-width: 768px) {
 			grid-template-columns: repeat(1, 1fr);
@@ -322,6 +328,7 @@ body {
 		cursor: pointer;
 		padding: 1rem 2rem;
 		border-radius: 1rem;
+		background-color: #dfe1de;
 	}
 	.cart-checkout-btn {
 		outline: none;
@@ -330,6 +337,7 @@ body {
 		background-color: coral;
 		font-size: 1rem;
 		font-weight: bold;
+		color: black;
 	}
 }
 

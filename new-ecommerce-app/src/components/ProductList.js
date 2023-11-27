@@ -2,17 +2,24 @@ import React from "react";
 import { useState } from "react";
 import "../styles.scss";
 
-const ProductList = ({ products, addToCart }) => {
+const ProductList = ({
+	products,
+	addToCart,
+	increment,
+	decrement,
+	quantity,
+}) => {
 	const [isReadMore, setIsReadMore] = useState(true);
 	const toggleReadMore = () => {
 		setIsReadMore(!isReadMore);
 	};
+
 	return (
 		<div className='product-list'>
-			{products?.map((product, n) => (
+			{products?.map((product) => (
 				<div
 					className='product-wrap'
-					key={n}>
+					key={product.id}>
 					<div
 						key={product.id}
 						className='product'>
@@ -37,6 +44,23 @@ const ProductList = ({ products, addToCart }) => {
 						</p>
 					</div>
 					<div className='btn-wrap'>
+						{quantity.map((item) => {
+							if (item.id === product.id) {
+								return (
+									<p className='quantity'>
+										Quantity:{" "}
+										<i
+											onClick={() => decrement(product)}
+											className='fa-solid fa-square-minus'></i>{" "}
+										{item.quantity}{" "}
+										<i
+											onClick={() => increment(product)}
+											className='fa-solid fa-square-plus'></i>
+									</p>
+								);
+							} else return null;
+						})}
+
 						<div className='price'>${product.price} CAD</div>
 						<button onClick={() => addToCart(product)}>Add to Cart</button>
 					</div>
