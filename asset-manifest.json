@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/kritibagga/ecommerce-app/static/css/main.b36ad31e.css",
+    "main.js": "/kritibagga/ecommerce-app/static/js/main.0374e503.js",
+    "static/media/empty-cart.png": "/kritibagga/ecommerce-app/static/media/empty-cart.f0d8f3d2a69675852ebb.png",
+    "index.html": "/kritibagga/ecommerce-app/index.html",
+    "main.b36ad31e.css.map": "/kritibagga/ecommerce-app/static/css/main.b36ad31e.css.map",
+    "main.0374e503.js.map": "/kritibagga/ecommerce-app/static/js/main.0374e503.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b36ad31e.css",
+    "static/js/main.0374e503.js"
+  ]
+}
