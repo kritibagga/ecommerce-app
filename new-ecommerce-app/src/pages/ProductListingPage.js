@@ -1,15 +1,17 @@
-import React, { useEffect,useState } from "react";
-import { useDispatch,useSelector} from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/actions/cartActions.js";
 import ProductList from "../components/ProductList";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
-
+import ReactPaginate from "react-paginate";
 
 const ProductListingPage = () => {
 	const dispatch = useDispatch();
-	const [data,setData]= useState([]);
+	const [data, setData] = useState([]);
+	const [currentPage, setCurrentPage] = useState(0);
+	const [totalPages, setTotalPages] = useState(0);
+	const itemsPerPage = 10;
 
 	const products = useSelector((state) => state.cartReducer.cartItems);
 
@@ -18,18 +20,25 @@ const ProductListingPage = () => {
 			try {
 				const response = await fetch("https://fakestoreapi.com/products");
 				const data = await response.json();
+				setData(data);
+				setTotalPages(Math.ceil(data?.length / itemsPerPage));
 
 				// Dispatch an action to update the Redux store with the fetched products
 				// dispatch({ type: "SET_PRODUCTS", payload: data });
-				setData(data)
 			} catch (error) {
 				console.error("Error fetching products:", error);
 			}
 		};
-
-		// Call the fetchProducts function
 		fetchProducts();
 	}, []);
+
+	const startIndex = currentPage * itemsPerPage;
+	const endIndex = startIndex + itemsPerPage;
+	const subset = data.slice(startIndex, endIndex);
+
+	const handlePageChange = (selectedPage) => {
+		setCurrentPage(selectedPage.selected);
+	};
 
 	return (
 		<>
@@ -44,11 +53,22 @@ const ProductListingPage = () => {
 					</div>
 				</Link>
 			</div>
-			{data ? (
-				<ProductList
-					products={data}
-					addToCart={(product) => dispatch(addToCart(product))}
-				/>
+			{subset.length > 1 ? (
+				<>
+					<ProductList
+						products={subset}
+						addToCart={(product) => dispatch(addToCart(product))}
+					/>
+					<ReactPaginate
+						pageCount={totalPages}
+						onPageChange={handlePageChange}
+						forcePage={currentPage}
+						previousLabel={"Prev"}
+						nextLabel={"Next"}
+						containerClassName={"pagination-container"}
+						activeClassName={"active-page"}
+					/>
+				</>
 			) : (
 				<p>Loading products...</p>
 			)}

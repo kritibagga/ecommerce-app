@@ -63,12 +63,14 @@ const Cart = ({ cart, removeFromCart, clearCart, increment, decrement }) => {
 			) : (
 				<div className='empty-cart-wrap'>
 					<img
-                    className="empty-cart-img"
+						className='empty-cart-img'
 						alt='empty-cart'
 						src={image}
 					/>
 					<p className='empty-cart-para'>Your Cart is Empty</p>
-					<p className="empty-cart-second-para">Add Something to make me happy 😀 </p>
+					<p className='empty-cart-second-para'>
+						Add Something to make me happy 😀{" "}
+					</p>
 					<Link
 						className='continue-shopping-link'
 						to='/'>

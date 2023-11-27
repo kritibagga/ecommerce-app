@@ -20,14 +20,38 @@ html {
 	display: table;
 	margin: auto;
 }
-body {
-	min-height: 100vh;
-}
+
 
 .App {
 	font-family: "Arial", sans-serif;
 	text-align: center;
 	margin: 0 auto;
+}
+.pagination-container {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5rem;
+	li {
+		margin-right: 1rem;
+		cursor: pointer;
+	}
+
+	.next,
+	.previous {
+		cursor: pointer;
+	}
+	.next:hover,
+	.previous:hover {
+		color: green;
+	}
+	.active-page {
+		background-color: blue;
+		color: white;
+		padding: 0.5rem;
+	}
 }
 .header-wrap {
 	display: flex;
@@ -209,7 +233,6 @@ body {
 		}
 	}
 	.empty-cart-wrap {
-
 		.empty-cart-img {
 			max-width: 100%;
 			padding: 1rem;
