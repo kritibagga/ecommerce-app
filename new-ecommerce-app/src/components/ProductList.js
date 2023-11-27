@@ -20,9 +20,7 @@ const ProductList = ({
 				<div
 					className='product-wrap'
 					key={product.id}>
-					<div
-						key={product.id}
-						className='product'>
+					<div className='product'>
 						<h3>{product.title}</h3>
 						<img
 							className='product-image'
@@ -47,7 +45,9 @@ const ProductList = ({
 						{quantity.map((item) => {
 							if (item.id === product.id) {
 								return (
-									<p className='quantity'>
+									<p
+										className='quantity'
+										key={product.id}>
 										Quantity:{" "}
 										<i
 											onClick={() => decrement(product)}

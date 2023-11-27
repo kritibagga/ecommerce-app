@@ -18,7 +18,7 @@ const Cart = ({ cart, removeFromCart, clearCart, increment, decrement }) => {
 			)}
 
 			{cart.map((item) => (
-				<div className='cart-item'>
+				<div className='cart-item' key={item.id}>
 					<img
 						className='cart-item-image'
 						alt='cartitemimage'

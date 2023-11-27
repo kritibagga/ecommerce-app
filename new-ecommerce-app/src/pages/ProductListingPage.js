@@ -33,12 +33,20 @@ const ProductListingPage = () => {
 		fetchProducts();
 	}, []);
 
+	const goToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	const startIndex = currentPage * itemsPerPage;
 	const endIndex = startIndex + itemsPerPage;
 	const subset = data.slice(startIndex, endIndex);
 
 	const handlePageChange = (selectedPage) => {
 		setCurrentPage(selectedPage.selected);
+		goToTop();
 	};
 
 	return (
@@ -74,7 +82,7 @@ const ProductListingPage = () => {
 					/>
 				</>
 			) : (
-				<p>Loading products...</p>
+				<p> Loading products...</p>
 			)}
 		</>
 	);
