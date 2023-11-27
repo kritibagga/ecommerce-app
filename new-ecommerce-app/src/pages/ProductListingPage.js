@@ -22,9 +22,6 @@ const ProductListingPage = () => {
 				const data = await response.json();
 				setData(data);
 				setTotalPages(Math.ceil(data?.length / itemsPerPage));
-
-				// Dispatch an action to update the Redux store with the fetched products
-				// dispatch({ type: "SET_PRODUCTS", payload: data });
 			} catch (error) {
 				console.error("Error fetching products:", error);
 			}
@@ -42,7 +39,7 @@ const ProductListingPage = () => {
 
 	return (
 		<>
-			<div className='header-wrap'>
+			<div className='product-header-wrap '>
 				<h1 className='product-list-header'>KrytLabs Shopping</h1>
 				<Link
 					to='/cart'
