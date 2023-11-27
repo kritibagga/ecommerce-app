@@ -109,6 +109,7 @@ body {
 		padding: 0.5rem;
 	}
 }
+
 .product-header-wrap {
 	display: flex;
 	flex-direction: row;
@@ -231,6 +232,10 @@ body {
 /* Cart styles */
 .cart {
 	margin-top: 20px;
+    height:100vh;
+    @media (max-width: 768px) {
+        height:100%;
+    }
 
 	.cart-total {
 		margin: 3rem;
@@ -352,20 +357,16 @@ body {
 // Footer Section
 .footer {
 	background-color: #3a3737;
-	margin-top: 1rem;
 	display: flex;
 	align-items: flex-start;
 	line-height: 2rem;
 	padding: 1rem 0 3rem 0;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
+    margin-top:2rem;
 
 	@media (max-width: 768px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-        position: static;
 	}
 
 	.footer-group {
