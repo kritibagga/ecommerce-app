@@ -26,7 +26,9 @@ const ProductList = ({ products, addToCart }) => {
 								? product.description.slice(0, 150)
 								: product.description}
 							{product.description.length > 150 && (
-								<span className="product-read-more"onClick={toggleReadMore}>
+								<span
+									className='product-read-more'
+									onClick={toggleReadMore}>
 									{isReadMore ? "...Read More" : " ...Show Less"}
 								</span>
 							)}
