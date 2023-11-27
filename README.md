@@ -11,7 +11,7 @@
 8) Also there is clear cart button to clear all the elements in the cart
 9) At the end of this page, it shows total amount need to be paid in order to proceed
 
- -**note: Since the FakeAPi data was limited to 20 items per request, i kept 10 items per page to show pagination**
+ -**note: Since the FakeAPI data was limited to 20 items per request, i kept 10 items per page to show pagination**
  <br/>
 -**note: header, footer, proceed to checkout button are dummy or static: it has no functionality**
 
