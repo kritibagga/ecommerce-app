@@ -2,9 +2,17 @@ import React from "react";
 const Header = () => {
 	return (
 		<div className='header-wrap'>
-            <div className="header-brand"><i className="fa-solid fa-store"></i>KrytLabs</div>
-            <form className="header-search"><input type="search" name="search" placeholder="Search..."/> <i className="fa-solid fa-search search-icon"></i></form>
-
+			<div className='header-brand'>
+				<i className='fa-solid fa-store'></i>KrytLabs
+			</div>
+			<form className='header-search'>
+				<input
+					type='search'
+					name='search'
+					placeholder='Search...'
+				/>{" "}
+				<i className='fa-solid fa-search search-icon'></i>
+			</form>
 
 			<ul>
 				<li>

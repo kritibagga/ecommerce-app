@@ -12,7 +12,6 @@ import { connect } from "react-redux";
 
 const CartDetailsPage = () => {
 	const dispatch = useDispatch();
-
 	const cartdata = useSelector((state) => state.cartReducer.cartItems);
 
 	return (

@@ -51,19 +51,18 @@ const Cart = ({ cart, removeFromCart, clearCart, increment, decrement }) => {
 				</div>
 			))}
 			{cart.length > 0 ? (
-                <>
-				<p className='cart-total'>
-					Total Amount:
-					<span className='cart-total-amount'>
-						$
-						{cart
-							.reduce((total, item) => total + item.quantity * item.price, 0)
-							.toFixed(2)}
-					</span>
-				</p>
-                <button className="cart-checkout-btn"> Proceed to Checkout</button>
-
-                </>
+				<>
+					<p className='cart-total'>
+						Total Amount:
+						<span className='cart-total-amount'>
+							$
+							{cart
+								.reduce((total, item) => total + item.quantity * item.price, 0)
+								.toFixed(2)}
+						</span>
+					</p>
+					<button className='cart-checkout-btn'> Proceed to Checkout</button>
+				</>
 			) : (
 				<div className='empty-cart-wrap'>
 					<img
