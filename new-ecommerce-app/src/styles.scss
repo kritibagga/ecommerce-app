@@ -82,6 +82,7 @@ body {
 		margin-right: 2rem;
 	}
 }
+
 .pagination-container {
 	list-style: none;
 	display: flex;
@@ -321,6 +322,14 @@ body {
 		cursor: pointer;
 		padding: 1rem 2rem;
 		border-radius: 1rem;
+	}
+	.cart-checkout-btn {
+		outline: none;
+		border: none;
+		padding: 1rem 4rem;
+		background-color: coral;
+		font-size: 1rem;
+		font-weight: bold;
 	}
 }
 

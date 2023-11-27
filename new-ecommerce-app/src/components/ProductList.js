@@ -9,8 +9,10 @@ const ProductList = ({ products, addToCart }) => {
 	};
 	return (
 		<div className='product-list'>
-			{products?.map((product) => (
-				<div className='product-wrap'>
+			{products?.map((product, n) => (
+				<div
+					className='product-wrap'
+					key={n}>
 					<div
 						key={product.id}
 						className='product'>
