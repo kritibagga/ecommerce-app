@@ -232,7 +232,7 @@ body {
 /* Cart styles */
 .cart-details-page {
 	height: 100vh;
-	overflow: scroll;
+	overflow-y: scroll;
 	@media (max-width: 768px) {
 		height: 100%;
 	}
