@@ -5,6 +5,7 @@ h1,
 h2,
 h3,
 p,
+ul,
 button {
 	margin: 0;
 	padding: 0;
@@ -19,13 +20,67 @@ body {
 html {
 	display: table;
 	margin: auto;
+	height: 100%;
+	width: 100%;
 }
 
+body {
+	height: 100vh;
+}
 
 .App {
 	font-family: "Arial", sans-serif;
 	text-align: center;
 	margin: 0 auto;
+}
+
+// header section
+.header-wrap {
+	background-color: #3c31ef;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		line-height: 2rem;
+	}
+
+	.header-brand {
+		color: white;
+		margin-right: 1rem;
+		i {
+			margin-right: 0.5rem;
+		}
+	}
+	.header-search {
+		input {
+			border: none;
+			outline: none;
+			width: 27vw;
+			padding: 0.4rem;
+			border-radius: 1rem;
+		}
+		.search-icon {
+			margin-left: 0.5rem;
+			color: white;
+		}
+	}
+	.header-icon {
+		margin-right: 0.5rem;
+	}
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+
+	a {
+		text-decoration: none;
+		color: white;
+		margin-right: 2rem;
+	}
 }
 .pagination-container {
 	list-style: none;
@@ -53,7 +108,7 @@ html {
 		padding: 0.5rem;
 	}
 }
-.header-wrap {
+.product-header-wrap {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -233,6 +288,7 @@ html {
 		}
 	}
 	.empty-cart-wrap {
+		margin-bottom: 3rem;
 		.empty-cart-img {
 			max-width: 100%;
 			padding: 1rem;
@@ -265,5 +321,56 @@ html {
 		cursor: pointer;
 		padding: 1rem 2rem;
 		border-radius: 1rem;
+	}
+}
+
+// Footer Section
+.footer {
+	background-color: #3a3737;
+	margin-top: 1rem;
+	display: flex;
+	align-items: flex-start;
+	line-height: 2rem;
+	padding: 1rem 0 3rem 0;
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer-group {
+		display: flex;
+		align-items: flex-start;
+		color: white;
+		flex-direction: column;
+		margin: 3rem 2rem 0 3rem;
+
+		@media (max-width: 768px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		h2 {
+			color: white;
+		}
+		a {
+			text-decoration: none;
+			color: #878787;
+		}
+	}
+	.social-icons {
+		display: flex;
+		color: white;
+		flex-direction: column;
+		margin: 3rem 2rem 0 3rem;
+
+		.social-icon-group {
+			display: flex;
+			flex-direction: row;
+			margin-left: 1.2rem;
+			i {
+				margin-right: 1rem;
+			}
+		}
 	}
 }

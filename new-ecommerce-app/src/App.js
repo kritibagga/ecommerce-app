@@ -4,12 +4,14 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import ProductListingPage from "./pages/ProductListingPage";
 import CartDetailsPage from "./pages/CartDetailsPage";
-
+import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
 function App() {
 	return (
 		<Provider store={store}>
 			<Router>
 				<div className='App'>
+          <Header/>
 					<Routes>
 						{/* Product Listing Page */}
 						<Route
@@ -23,6 +25,7 @@ function App() {
 							element={<CartDetailsPage />}
 						/>
 					</Routes>
+          <Footer/>
 				</div>
 			</Router>
 		</Provider>
