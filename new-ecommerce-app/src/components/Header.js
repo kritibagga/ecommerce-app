@@ -1,10 +1,13 @@
 import React from "react";
+import {Link} from "react-router-dom";
 const Header = () => {
 	return (
 		<div className='header-wrap'>
+            <Link to="/">
 			<div className='header-brand'>
 				<i className='fa-solid fa-store'></i>KrytLabs
 			</div>
+            </Link>
 			<form className='header-search'>
 				<input
 					type='search'
